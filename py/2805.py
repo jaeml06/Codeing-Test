@@ -1,5 +1,4 @@
 import sys
-from bisect import bisect_left
 
 N, M = map(int, sys.stdin.readline().split())
 
