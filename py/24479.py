@@ -20,7 +20,9 @@ for i in data:
 
 def dfs(r):
     global count
+
     visited[r] = count
+
     for i in data[r]:
         if visited[i] == 0:
             count += 1
