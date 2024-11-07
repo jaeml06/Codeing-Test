@@ -6,6 +6,10 @@ const arr = temp2.map(val => val.split(' '))
 const start = arr[0][0]
 const end = arr[R-1][C-1]
 let answer = 0
+if(start === end){
+    console.log(0)
+    return
+}
 for(let i = 1; i < R-2; i++){
     for(let j = 1; j < C-2; j++){
         if(start !== arr[i][j]){
