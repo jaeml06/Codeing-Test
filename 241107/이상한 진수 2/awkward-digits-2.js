@@ -8,6 +8,9 @@ for(let i = 0; i < arr.length; i++){
         arr[i] = 1;
         break;
     }
+    if(i === arr.length-1){
+        arr[i] = 0
+    }
 }
 const answer = arr.reverse().reduce((prev, cur, index) => {
     return prev + cur * Math.pow(2, index)
