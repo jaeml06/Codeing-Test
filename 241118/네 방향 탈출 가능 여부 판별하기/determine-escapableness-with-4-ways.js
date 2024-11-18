@@ -18,7 +18,7 @@ function bfs(){
             const curX = x + dx[i];
             const curY = y + dy[i];
 
-            if(0<= curX && curX < n && 0 <= curY && curY < m && !visited[curY][curX] && graph[curY][curX] === 1){
+            if(0<= curX && curX < m && 0 <= curY && curY < n && !visited[curY][curX] && graph[curY][curX] === 1){
                 if(curX === m - 1 && curY === n - 1){
                     return true;
                 }
