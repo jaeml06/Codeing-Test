@@ -31,7 +31,8 @@ function bfs(x, y){
 }
 let answer = 0
 for(const [x, y] of dot){
-    if(!visited[y][x]){
+    if(0 <= x && x < n &&
+        0 <= y && y < n && !visited[y][x]){
         answer += bfs(x, y)
     }
 }
