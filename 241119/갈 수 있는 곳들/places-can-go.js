@@ -12,7 +12,7 @@ const dy = [0, 0, -1, 1]
 function bfs(x, y){
     const queue = [[x, y]];
     let head = 0
-    visited[0][0] = true;
+    visited[y][x] = true;
 
     while(head < queue.length){
         const [x, y] = queue[head]
