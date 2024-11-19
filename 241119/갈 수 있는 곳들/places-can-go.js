@@ -11,13 +11,11 @@ const dy = [0, 0, -1, 1];
 
 function bfs(x, y) {
     const queue = [[x, y]];
-    let count = 0
     let head = 0;
     visited[y][x] = true; 
 
     while (head < queue.length) {
         const [curX, curY] = queue[head++];
-        count++
         for (let i = 0; i < 4; i++) {
             const nextX = curX + dx[i];
             const nextY = curY + dy[i];
@@ -33,17 +31,15 @@ function bfs(x, y) {
             }
         }
     }
-    return count; 
+    return head; 
 }
-
-let answer = 0;
-for (const [x, y] of dot) {
-    const startX = x - 1;
-    const startY = y - 1;
-
+let totalReachable = 0;
+dots.forEach(([r, c]) => {
+    const startX = c - 1;
+    const startY = r - 1;
     if (!visited[startY][startX]) {
-        answer += bfs(startX, startY);
+        totalReachable += bfs(startX, startY);
     }
-}
+});
 
-console.log(answer);
+console.log(totalReachable);
