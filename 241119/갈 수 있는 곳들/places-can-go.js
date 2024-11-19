@@ -34,7 +34,7 @@ function bfs(x, y) {
     return head; 
 }
 let totalReachable = 0;
-dots.forEach(([r, c]) => {
+dot.forEach(([r, c]) => {
     const startX = c - 1;
     const startY = r - 1;
     if (!visited[startY][startX]) {
