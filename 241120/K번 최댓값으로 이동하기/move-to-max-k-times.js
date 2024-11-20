@@ -15,7 +15,7 @@ function searchTarget(x, y){
             }
         }
     }
-    return max
+    return max !== Number.MIN_SAFE_INTEGER ? max : null
 }
 function bfs(x, y, target, count){
     const visited = Array.from({length: n}, () => Array(n).fill(false));
@@ -36,6 +36,9 @@ function bfs(x, y, target, count){
                         return [nextX, nextY];
                     }
                     target = searchTarget(nextX, nextY)
+                    if (target === null) {
+                        return [nextX, nextY];
+                    }
                     return bfs(nextX, nextY, target, count + 1)
                 } else{
                     visited[nextY][nextX] = true
