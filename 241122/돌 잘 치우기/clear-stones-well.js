@@ -67,7 +67,7 @@ startDots.forEach(([c, r]) => {
         rocks.forEach(([x, y]) => {
             graph[y][x] = 0
         })
-         maxCount = Math.max(bfs(c, r), maxCount);
+         maxCount = Math.max(bfs(c -1, r -1), maxCount);
          rocks.forEach(([x, y]) => {
             graph[y][x] = 1
         })
