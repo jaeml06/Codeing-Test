@@ -18,4 +18,4 @@ function dp(n) {
     return memo[n];
 }
 
-console.log(dp(n) % 100007);
+console.log(dp(n) % 10_007);
