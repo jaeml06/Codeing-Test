@@ -8,8 +8,8 @@ function dp(n) {
     if (n < 0) {
         return 0;
     }
-    if (n === 0) {
-        return 1;
+    if (n === 2 || n === 3) {
+        memo[n] = 1
     }
     if (memo[n] !== -1) {
         return memo[n];
