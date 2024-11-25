@@ -8,11 +8,11 @@ function dp(n) {
     if (n <= 1) {
         return 0;
     }
-    if (n === 2 || n === 3) {
-        memo[n] = 1
-    }
     if (memo[n] !== 0) {
         return memo[n];
+    }
+    if (n === 2 || n === 3) {
+        memo[n] = 1
     }
     memo[n] = dp(n - 2) + dp(n - 3);
     return memo[n];
