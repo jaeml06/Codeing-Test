@@ -17,5 +17,6 @@ function dp(n) {
     memo[n] = dp(n - 2) + dp(n - 3);
     return memo[n];
 }
+dp(n)
 
-console.log(dp(n) % 10_007);
+console.log(memo[n] % 10_007);
