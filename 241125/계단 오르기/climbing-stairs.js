@@ -5,7 +5,7 @@ const n = Number(temp1);
 const memo = Array(1001).fill(0);
 
 function dp(n) {
-    if (n < 0) {
+    if (n <= 1) {
         return 0;
     }
     if (n === 2 || n === 3) {
