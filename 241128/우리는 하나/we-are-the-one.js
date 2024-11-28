@@ -4,9 +4,6 @@ let [temp1, ...temp2] = fs.readFileSync(0).toString().trim().split('\n');
 const [n, k, u, d] = temp1.split(' ').map(Number);
 
 const graph = temp2.map(val => val.split(' ').map(Number));
-let visited = Array.from({length: n}, () => Array(n).fill(false))
-
-
 const dx = [-1, 1, 0, 0];
 const dy = [0, 0, -1, 1];
 
@@ -37,7 +34,8 @@ function combinations(arr, k) {
     return result;
 }
 
-function bfs(x, y){
+function bfs(x, y, visited){
+    if (visited[y][x]) return 0;
     const queue = [[x, y]]
     visited[y][x] = true
     let head = 0
@@ -64,10 +62,10 @@ const arr = combinations(graph, k)
 let maxSum = Number.MIN_SAFE_INTEGER;
 
 arr.forEach(poses => {
-    visited = Array.from({length: n}, () => Array(n).fill(false))
+const visited = Array.from({ length: n }, () => Array(n).fill(false));
     let sum = 0
     poses.forEach(pos => {
-        sum += bfs(pos[1], pos[2])
+        sum += bfs(pos.x, pos.y, visited);
     })
     maxSum = Math.max(sum, maxSum);
 })
