@@ -1,17 +1,17 @@
 let fs = require('fs');
 let [temp1, ...temp2] = fs.readFileSync(0).toString().trim().split('\n');
 
-const [n, k, u, d] = temp1.split(' ').map(Number);
+const [n, k, u, d] = temp1.trim().split(/\s+/).map(Number);
 
-const graph = temp2.map(val => val.split(' ').map(Number));
+const graph = temp2.map(val => val.trim().split(/\s+/).map(Number));
+
 const dx = [-1, 1, 0, 0];
 const dy = [0, 0, -1, 1];
 
 function combinations(arr, k) {
     const result = [];
-    const n = arr.length;
     const positions = [];
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < arr.length; i++) {
         for (let j = 0; j < arr[i].length; j++) {
             positions.push({ value: arr[i][j], x: j, y: i });
         }
@@ -34,39 +34,47 @@ function combinations(arr, k) {
     return result;
 }
 
-function bfs(x, y, visited){
-    if (visited[y][x]) return 0;
-    const queue = [[x, y]]
-    visited[y][x] = true
-    let head = 0
-    
-    while(head < queue.length){
-        const [startX, startY] = queue[head++];
-        for(let i = 0; i< 4; i++){
-        const nextX = dx[i] + startX;
-        const nextY = dy[i] + startY;
-
-        if(0<= nextX && nextX < n && 0 <= nextY && nextY < n && !visited[nextY][nextX]){
-            if(Math.abs(graph[startY][startX] - graph[nextY][nextX]) >= u && Math.abs(graph[startY][startX] - graph[nextY][nextX]) <= d){
-                visited[nextY][nextX] = true;
-                queue.push([nextX, nextY])
-            }
-        }
+function bfs(startPositions, visited) {
+    const queue = [];
+    for (const pos of startPositions) {
+        const { x, y } = pos;
+        if (!visited[y][x]) {
+            visited[y][x] = true;
+            queue.push([x, y]);
         }
     }
- 
-    return head
+    let head = 0;
+
+    while (head < queue.length) {
+        const [currentX, currentY] = queue[head++];
+        for (let i = 0; i < 4; i++) {
+            const nextX = currentX + dx[i];
+            const nextY = currentY + dy[i];
+
+            if (
+                0 <= nextX && nextX < n &&
+                0 <= nextY && nextY < n &&
+                !visited[nextY][nextX]
+            ) {
+                const heightDiff = Math.abs(graph[currentY][currentX] - graph[nextY][nextX]);
+                if (u <= heightDiff && heightDiff <= d) {
+                    visited[nextY][nextX] = true;
+                    queue.push([nextX, nextY]);
+                }
+            }
+        }
+    }
+
+    return queue.length;
 }
 
-const arr = combinations(graph, k)
+const arr = combinations(graph, k);
 let maxSum = Number.MIN_SAFE_INTEGER;
 
 arr.forEach(poses => {
-const visited = Array.from({ length: n }, () => Array(n).fill(false));
-    let sum = 0
-    poses.forEach(pos => {
-        sum += bfs(pos.x, pos.y, visited);
-    })
-    maxSum = Math.max(sum, maxSum);
-})
-console.log(maxSum)
+    const visited = Array.from({ length: n }, () => Array(n).fill(false));
+    const totalVisited = bfs(poses, visited);
+    maxSum = Math.max(maxSum, totalVisited);
+});
+
+console.log(maxSum);
