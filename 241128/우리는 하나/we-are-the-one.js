@@ -4,7 +4,7 @@ let [temp1, ...temp2] = fs.readFileSync(0).toString().trim().split('\n');
 const [n, k, u, d] = temp1.split(' ').map(Number);
 
 const graph = temp2.map(val => val.split(' ').map(Number));
-let visited
+let visited = Array.from({length: n}, () => Array(n).fill(false))
 
 
 const dx = [-1, 1, 0, 0];
