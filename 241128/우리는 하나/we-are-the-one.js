@@ -1,9 +1,9 @@
 let fs = require('fs');
 let [temp1, ...temp2] = fs.readFileSync(0).toString().trim().split('\n');
 
-const [n, k, u, d] = temp1.split(' ').map(Number);
+const [n, k, u, d] = temp1.trim().split(/\s+/).map(Number);
 
-const graph = temp2.map(val => val.split(' ').map(Number));
+const graph = temp2.map(val => val.trim().split(/\s+/).map(Number));
 const dx = [-1, 1, 0, 0];
 const dy = [0, 0, -1, 1];
 
