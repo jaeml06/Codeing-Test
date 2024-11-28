@@ -12,25 +12,31 @@ const dy = [0, 0, -1, 1];
 
 function combinations(arr, k) {
     const result = [];
+    const n = arr.length;
+    const positions = [];
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            positions.push({ value: arr[i][j], x: j, y: i });
+        }
+    }
 
-    function helper(startX, startY, path) {
+    function helper(start, path) {
         if (path.length === k) {
             result.push([...path]);
             return;
         }
 
-        for (let i = startY; i < arr.length; i++) {
-            for(let j = startX; j < arr[i].length; j++){
-                path.push([arr[i][j], j, i]);
-                helper(j + 1, i + 1, path);
-                path.pop();
-            }
+        for (let i = start; i < positions.length; i++) {
+            path.push(positions[i]);
+            helper(i + 1, path);
+            path.pop();
         }
     }
 
-    helper(0, 0, []);
+    helper(0, []);
     return result;
 }
+
 function bfs(x, y){
     const queue = [[x, y]]
     visited[y][x] = true
