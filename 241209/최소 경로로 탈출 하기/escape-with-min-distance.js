@@ -6,6 +6,11 @@ const visited = Array.from({length: m}, () => Array(n).fill(-1));
 const dx = [-1, 1, 0, 0];
 const dy = [0, 0, -1, 1];
 
+if (graph[0][0] === 0) {
+    console.log(-1);
+    return;
+}
+
 function bfs(){
     const queue = [[0, 0]];
     visited[0][0] = 0;
