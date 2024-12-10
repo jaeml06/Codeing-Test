@@ -29,6 +29,10 @@ function bfs(r1, c1){
         }
        
     }
-     return -1;
+    return -1;
 }
-console.log(bfs(r1 - 1, c1 - 1))
+if(c1 === c2 && r1 === r2){
+    console.log(1)
+}else{
+    console.log(bfs(r1 - 1, c1 - 1))
+}
