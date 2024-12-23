@@ -5,22 +5,22 @@ const n = Number(temp1)
 let count = 0;
 const temp = [];
 
-function isCheck(arr) {
+function isCheck() {
   let length = 1;
-  for (let i = 1; i < arr.length; i++) {
+  for (let i = 1; i < temp.length; i++) {
     if (arr[i] === arr[i - 1]) {
-      length++;
+      temp++;
     } else {
-      if (length !== arr[i - 1]) return false;
+      if (length !== temp[i - 1]) return false;
       length = 1;
     }
   }
-  return length === arr[arr.length - 1];
+  return length === temp[temp.length - 1];
 }
 
 function recur(length) {
   if (length === n) {
-    if (isCheck(temp)) {
+    if (isCheck()) {
       count++;
     }
     return;
