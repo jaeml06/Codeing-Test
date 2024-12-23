@@ -8,8 +8,8 @@ const temp = [];
 function isCheck() {
   let length = 1;
   for (let i = 1; i < temp.length; i++) {
-    if (arr[i] === arr[i - 1]) {
-      temp++;
+    if (temp[i] === temp[i - 1]) {
+      length++;
     } else {
       if (length !== temp[i - 1]) return false;
       length = 1;
