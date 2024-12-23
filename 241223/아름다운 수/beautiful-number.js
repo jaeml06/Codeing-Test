@@ -9,7 +9,11 @@ function isCheck() {
   let length = 1;
   for (let i = 1; i < temp.length; i++) {
     if (temp[i] === temp[i - 1]) {
-      length++;
+        if(length === temp[temp.length - 1]){
+            length =1
+        }else{
+            length++;
+        }
     } else {
       if (length !== temp[i - 1]) return false;
       length = 1;
