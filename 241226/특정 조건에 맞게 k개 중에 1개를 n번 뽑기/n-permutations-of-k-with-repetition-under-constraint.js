@@ -10,7 +10,7 @@ function choose(n){
         return;
     }
     for(let i = 1; i <= K; i++){
-        if(n >= 3 && answer[answer.length - 1] === answer[answer.length-2] && answer[answer.length - 1] === answer[answer.length-2]) continue;
+        if(n >= 2 && answer[answer.length - 1] === answer[answer.length-2] && answer[answer.length - 1] === answer[answer.length-2]) continue;
         answer.push(i);
         choose(n+1)
         answer.pop();
