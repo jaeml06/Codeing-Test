@@ -4,7 +4,7 @@ let input = fs.readFileSync(0).toString().trim().split('\n').map(val => val.trim
 const [m1, d1, m2, d2] = input[0].split(' ').map(Number);
 let checkMonth = m1
 let checkDays = d1
-let answer = 1
+let answer = 0
 
 const temp = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
@@ -17,7 +17,7 @@ while(true){
 
     if(temp[checkMonth] === checkDays){
         checkMonth += 1
-        checkDays = 1
+        checkDays = 0
     }
 }
 
