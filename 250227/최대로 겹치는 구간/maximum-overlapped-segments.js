@@ -7,11 +7,11 @@ for (let i = 1; i <= n; i++) {
     segments.push(input[i].split(' ').map(Number));
 }
 
-const temp = Array(200).fill(0)
+const temp = Array(401).fill(0)
 
 segments.forEach(([start, end]) => {
-    for(let i = start + 100; i <= end + 100; i++){
-        temp[i] +=1
+    for (let i = start + 200; i <= end + 200; i++) {
+    temp[i] += 1;
     }
 })
 console.log(Math.max(...temp))
