@@ -10,7 +10,7 @@ for (let i = 1; i <= n; i++) {
 const temp = Array(401).fill(0)
 
 segments.forEach(([start, end]) => {
-    for (let i = start + 200; i <= end + 200; i++) {
+    for (let i = start + 200; i < end + 200; i++) {
     temp[i] += 1;
     }
 })
