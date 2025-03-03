@@ -1,8 +1,8 @@
 const fs = require("fs");
 const input = fs.readFileSync(0).toString().trim().split('\n');
 
-const rect1 = input[0].split(' ').map(val => Number(val) + 1000);
-const rect2 = input[1].split(' ').map(val => Number(val) + 1000);
+const rect1 = input[0].split(' ').map(val => Number(val) + 1001);
+const rect2 = input[1].split(' ').map(val => Number(val) + 1001);
 
 const grid = Array.from({length : 2001}, () => Array(2001).fill(false));
 
@@ -26,6 +26,9 @@ let minX = Number.MAX_SAFE_INTEGER
 let minY = Number.MAX_SAFE_INTEGER
 
 grid.forEach((arr, indexY) => {
+  if(arr.includes(true)){
+    // console.log(arr)
+  }
     arr.forEach((val, indexX) => {
         if(val){
             maxX = Math.max(maxX, indexX);
@@ -36,4 +39,8 @@ grid.forEach((arr, indexY) => {
         }
     })
 })
+if(maxX === Number.MIN_SAFE_INTEGER){
+    console.log(0)
+    return
+}
 console.log((maxX - minX + 1) * (maxY - minY + 1))
