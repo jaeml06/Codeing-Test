@@ -29,10 +29,10 @@ let minY = Number.MAX_SAFE_INTEGER
 grid.forEach((arr, indexY) => {
     arr.forEach((val, indexX) => {
         if(val){
-            maxX = Math.max(maxX, indexX);
-            maxY = Math.max(maxY, indexY);
-            minX = Math.min(minX, indexX);
-            minY = Math.min(minY, indexY);
+            maxX = Math.max(maxX, indexX + 1);
+            maxY = Math.max(maxY, indexY + 1);
+            minX = Math.min(minX, indexX + 1);
+            minY = Math.min(minY, indexY + 1);
 
         }
     })
