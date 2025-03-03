@@ -7,7 +7,7 @@ const rects = input.slice(1, 1 + n).map(line => line.split(' ').map(Number));
 const grid = Array.from({ length: 201 }, () => Array(201).fill(false));
 
 rects.forEach(val => {
-    const [x, y] = val;
+    const [x, y] = val.map(a => a + 100);
     for(let i = y; i < y + 8; i++){
         for(let j = x; j < x + 8; j++){
             grid[i][j] = true;
