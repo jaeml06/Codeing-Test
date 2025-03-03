@@ -4,9 +4,7 @@ const input = fs.readFileSync(0).toString().trim().split('\n');
 const n = Number(input[0]);
 const rects = input.slice(1, 1 + n).map(line => line.split(' ').map(Number));
 
-const grid = Array.from({length : 201}, () => {
-   return Array(201).fill(false)
-})
+const grid = Array.from({ length: 201 }, () => Array(201).fill(false));
 
 rects.forEach(val => {
     const [x, y] = val;
