@@ -7,16 +7,18 @@ const rect2 = input[1].split(' ').map(val => Number(val) + 1000);
 const grid = Array.from({length : 2001}, () => Array(2001).fill(false));
 
 for (let i = rect1[1]; i <= rect1[3]; i++) {
-    for (let j = rect1[0]; j <= rect1[2]; j++) {
-        grid[i][j] = true;
-    }
+  for (let j = rect1[0]; j <= rect1[2]; j++) {
+    grid[i][j] = true;
+  }
 }
 
-for (let i = rect2[1]; i < rect2[3]; i++) {
-    for (let j = rect2[0]; j < rect2[2]; j++) {
-        grid[i][j] = false;
-    }
+// rect2
+for (let i = rect2[1]; i <= rect2[3]; i++) {
+  for (let j = rect2[0]; j <= rect2[2]; j++) {
+    grid[i][j] = false;
+  }
 }
+
 
 let maxX = Number.MIN_SAFE_INTEGER
 let maxY = Number.MIN_SAFE_INTEGER
