@@ -12,7 +12,7 @@ arr.forEach((val, index) => {
     } else if(val > t){
         if(max === 0){
             max++
-        } else if(arr[index -1] < arr[index]){
+        } else {
             max++;
         }
     } else{
