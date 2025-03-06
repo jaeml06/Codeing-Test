@@ -16,5 +16,5 @@ arr.forEach((val, index) => {
         max=1
     }
 })
-
+answer = Math.max(max, answer)
 console.log(answer)
