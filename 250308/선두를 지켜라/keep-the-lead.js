@@ -19,9 +19,8 @@ bData.forEach(([v, t]) => {
         B.push(B.length === 0 ? v : B[B.length - 1] + v);
     }
 });
-
-let answer = 0;
-let prevLead = A[0] > B[0] ? 'A' : 'B';
+let answer = -1;
+let prevLead = null;
 
 for (let i = 0; i < A.length; i++) {
     if (A[i] > B[i]) {
