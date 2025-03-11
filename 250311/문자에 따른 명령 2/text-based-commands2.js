@@ -10,7 +10,7 @@ const pos = [0, 0]
 
 commands.forEach(command => {
     if(command ==='L'){
-        dirNum = (dirNum - 1) % 4
+        dirNum = (dirNum - 1 + 4) % 4;  // 음수 방지
     }else if(command === 'R'){
         dirNum = (dirNum + 1) % 4
     }else if(command === 'F'){
