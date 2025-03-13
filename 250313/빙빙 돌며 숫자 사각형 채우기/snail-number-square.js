@@ -12,7 +12,7 @@ const grid = Array.from({length : n}, () => Array(m).fill(0));
 
 grid[y][x] = 1
 
-for(let i = 2; i<n * m; i++){
+for(let i = 2; i <= n * m; i++){
     let nx = x + dx[dirNum]; 
     let ny = y + dy[dirNum];
 
