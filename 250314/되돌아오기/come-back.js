@@ -14,7 +14,7 @@ let y = 0;
 
 let answer = 0
 
-moves.some((val) => {
+const flag = moves.some((val) => {
     const [d, t] = val.split(' ');
     for(let i = 0; i< Number(t); i++){
         x += dir[d][0];
@@ -26,4 +26,4 @@ moves.some((val) => {
     }
 })
 
-console.log(answer === 0 ? -1 : answer)
+console.log(flag ? answer : -1)
