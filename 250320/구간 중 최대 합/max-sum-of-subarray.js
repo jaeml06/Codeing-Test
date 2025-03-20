@@ -5,7 +5,7 @@ const [n, k] = input[0].split(' ').map(Number);
 const arr = input[1].split(' ').map(Number);
 
 let answer = 0
-for(let i = 0; i < n - k; i++){
+for(let i = 0; i < n - k + 1; i++){
     const temp = arr.slice(i, i + k)
     let sum = temp.reduce((prev, cur) => {
         return prev + cur
