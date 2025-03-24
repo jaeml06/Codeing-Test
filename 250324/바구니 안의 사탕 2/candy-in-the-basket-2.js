@@ -11,8 +11,9 @@ for (let i = 0; i < n; i++) {
     arr[position] += candy
 }
 let answer = 0
-for(let i = 0; i < arr.length - k; i++){
-    const temp = arr.slice(i, i+(2 * k) + 1);
+for(let i = 0; i < arr.length; i++){
+
+    const temp = arr.slice(i - k >= 0 ? i - k : 0, i+ k + 1 <= arr.length + 1 ? i+ k + 1 : arr.length + 1);
     const sum = temp.reduce((prev, cur) => {
         return prev + cur;
     }, 0);
