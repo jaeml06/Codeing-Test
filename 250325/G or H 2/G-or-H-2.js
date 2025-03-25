@@ -14,11 +14,6 @@ for(let i = 0; i < people.length; i++){
     let countH = 0;
     let max = 0;
     if(people[i] !== 'E'){
-        if(people[i] === 'G'){
-            countG++
-        }else {
-            countH++
-        }
         for(let j = 0; j < people.length; j++){
             if(people[j] !== 'E'){
                 if(people[j] === 'G'){
