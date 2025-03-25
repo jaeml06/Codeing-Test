@@ -14,11 +14,16 @@ for(let i = 0; i < people.length; i++){
     let countH = 0;
     let max = 0;
     if(people[i] !== 'E'){
-        for(let j = 0; j < people.length; j++){
+        if(people[i] === 'G'){
+            countG++
+        }else {
+            countH++
+        }
+        for(let j = i; j < people.length; j++){
             if(people[j] !== 'E'){
-                if(people[j] === 'G'){
+                if(people[j] === 'G' && i !== j){
                     countG++
-                }else {
+                }else if(people[j] === 'H' && i !== j) {
                     countH++
                 }
                 if((countG !== 0 && countH === 0) || (countG === 0 && countH !==0) || (countG === countH)){
