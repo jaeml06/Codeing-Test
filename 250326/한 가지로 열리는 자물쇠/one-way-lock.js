@@ -5,9 +5,9 @@ const [a, b, c] = input[1].trim().split(' ').map(Number);
 
 let count = 0
 
-for(let i = 1; i <= 6; i++){
-    for(let j = 1; j <= 6; j++){
-        for(let k = 1; k <= 6; k++){
+for(let i = 1; i <= n; i++){
+    for(let j = 1; j <= n; j++){
+        for(let k = 1; k <= n; k++){
             if(Math.abs(a - i) <= 2 || Math.abs(b - j) <= 2 || Math.abs(c - k) <= 2){
                 count++
             }
