@@ -10,7 +10,7 @@ for (let i = 1; i <= n; i++) {
   arr[i - 1] = true;
   let count = 0;
 
-  for (let j = 0; j < 3; j++) {
+  for (let j = 0; j < commands.length; j++) {
     const [a, b, guess] = commands[j];
 
     const temp = arr[a - 1];
