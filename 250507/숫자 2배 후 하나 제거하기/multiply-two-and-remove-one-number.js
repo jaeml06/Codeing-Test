@@ -5,9 +5,9 @@ const arr = input[1].trim().split(' ').map(Number);
 let min = Number.MAX_SAFE_INTEGER
 for(let i = 0; i < n; i++){
     const temp = [...arr];
-    let sum = 0
     temp[i] = temp[i] * 2;
     for(let j = 0; j < n; j++){
+        let sum = 0
         const temp2 = [...temp]
         temp2.splice(j, 1)
         for(let j = 0; j < temp2.length - 1; j++){
