@@ -17,11 +17,9 @@ for(let i = 0; i< n; i++){
 
     const maxX1 = Math.max(tempX1);
     const minX2 = Math.min(tempX2);
-    if(maxX1 < minX2){
-        
-    }else{
-        console.log('Yes')
-        return
+    if (maxX1 <= minX2) {
+        console.log('Yes');
+        return;
     }
 }
 console.log('No')
