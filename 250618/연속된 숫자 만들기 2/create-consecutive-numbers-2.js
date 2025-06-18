@@ -5,8 +5,8 @@ const arr = input[0].split(" ").map(Number);
 
 if(arr[0] + 2 === arr[1] + 1 === arr[2]){
     console.log(0)
-} else if(arr[0] + 1 === arr[1] || arr[1] + 1 === arr[2]){
+} else if(arr[0] + 2 === arr[1] || arr[1] + 2 === arr[2]){
     console.log(1)
-} else{
+} else {
     console.log(2)
 }
