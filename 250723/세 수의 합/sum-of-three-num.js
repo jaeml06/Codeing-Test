@@ -4,16 +4,24 @@ const input = fs.readFileSync(0).toString().trim().split('\n');
 const [n, k] = input[0].split(' ').map(Number);
 const arr = input[1].split(' ').map(Number);
 
-let count = 0;
+const map = new Map();
+let answer = 0;
 
-for (let i = 0; i < n - 2; i++) {
-  for (let j = i + 1; j < n - 1; j++) {
-    for (let l = j + 1; l < n; l++) {
-      if (arr[i] + arr[j] + arr[l] === k) {
-        count++;
-      }
+arr.forEach(val => {
+    map.set(val, (map.get(val) ?? 0) + 1);
+})
+
+
+for(let i = 0; i < n; i++){
+    if(map.has(arr[i])){
+        map.set(arr[i], map.get(arr[i]) - 1)
     }
-  }
+
+    for(let  j = 0; j < i; j++){
+        if(map.has(k - arr[i] - arr[j])){
+            answer += map.get(k - arr[i] - arr[j]);
+        }
+    }
 }
 
-console.log(count);
+console.log(answer)
