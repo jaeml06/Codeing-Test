@@ -8,4 +8,6 @@ const arr2 = input[3].trim().split(' ').map(Number);
 const temp1 = new Set(arr1);
 const temp2 = new Set(arr2);
 
-[...temp2].forEach(val => console.log(temp1.has(val) ? 1: 0))
+for (const val of temp2) {
+  console.log(temp1.has(val) ? 1 : 0);
+}
