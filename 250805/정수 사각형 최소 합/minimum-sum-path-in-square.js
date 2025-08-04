@@ -13,9 +13,8 @@ for(let i = 1; i < n; i++){
 }
 
 for(let j = n - 2; j>=0; j--){
-    dp[0][j] = dp[0][j-1] + num[0][j];
+    dp[0][j] = dp[0][j+1] + num[0][j];
 }
-
 
 for(let i = 1; i < n; i++){
     for(let j = n - 2; j >= 0; j--){
