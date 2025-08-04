@@ -4,7 +4,7 @@ const input = fs.readFileSync(0).toString().trim().split('\n');
 const n = Number(input[0]);
 const a = input[1].split(' ').map(Number);
 
-const dp = Array(n).fill(0);
+const dp = Array(n).fill(1);
 
 dp[0] = 1;
 
