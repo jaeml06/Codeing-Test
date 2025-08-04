@@ -11,8 +11,9 @@ dp[0] = 1;
 for(let  i = 1; i < n; i++){
     for(let j = 0; j < i; j++){
         if(a[i] > a[j]){
-            dp[i] = dp[j] + 1;
+            dp[i] = Math.max(dp[i], dp[j] + 1);
         }
     }
 }
+
 console.log(Math.max(...dp))
