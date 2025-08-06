@@ -1,5 +1,5 @@
-N = int(input())
-A = list(map(int, input().split()))
+n = int(input())
+arr = list(map(int, input().split()))
 
 # Please write your code here.
 
