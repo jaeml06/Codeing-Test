@@ -16,6 +16,6 @@ for i in range(1, n-1):
         dist += abs(x[prev_idx] - x[j]) + abs(y[prev_idx] - y[j])
         prev_idx = j
         
-    ans = min(ans, dist)
+    ans = max(ans, dist)
 
 print(ans)
