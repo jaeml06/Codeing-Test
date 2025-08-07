@@ -7,15 +7,14 @@ y = [p[1] for p in points]
 
 # Please write your code here.
 ans = sys.maxsize
-for i in range(1, n-1):
+for i in range(1, n):
     dist = 0
     prev_idx = 0
-    for j in range(i, n):
+    for j in range(1, n):
         if i == j:
             continue
         dist += abs(x[prev_idx] - x[j]) + abs(y[prev_idx] - y[j])
         prev_idx = j
-        
-    ans = max(ans, dist)
+    ans = min(ans, dist)
 
 print(ans)
