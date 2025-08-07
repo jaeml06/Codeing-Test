@@ -10,7 +10,7 @@ for i in range(2, 17):
             for x1, y1 in zip(dx, dy):
                 count = 0
                 for x, y in zip(x1, y1):
-                    if board[y][x] == 1:
+                    if board[i+y][j+x] == 1:
                         count+=1
                 if count == 5:
                     print(1)
