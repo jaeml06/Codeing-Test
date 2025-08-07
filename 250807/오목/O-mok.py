@@ -4,13 +4,15 @@ board = [list(map(int, input().split())) for _ in range(19)]
 dx = [[-2, -1, 0, 1, 2], [-2, -1, 0, 1, 2], [-2, -1, 0, 1, 2], [0, 0, 0, 0, 0]]
 dy = [[-2, -1, 0, 1, 2], [0, 0, 0, 0, 0], [2, 1, 0, -1, -2], [-2, -1, 0, 1, 2]]
 
-for i in range(2, 17):
-    for j in range(2, 17):
+for i in range(19):
+    for j in range(19):
+        # if 2 > i and i >= 17 or 2 > j and j >= 17:
+        #     continue
         if board[i][j] == 1:
             for x1, y1 in zip(dx, dy):
                 count = 0
                 for x, y in zip(x1, y1):
-                    if board[i+y][j+x] == 1:
+                    if 0 <= i+y < 19 and 0 <= j+x < 19 and board[i+y][j+x] == 1:
                         count+=1
                 if count == 5:
                     print(1)
@@ -20,7 +22,7 @@ for i in range(2, 17):
             for x1, y1 in zip(dx, dy):
                 count = 0
                 for x, y in zip(x1, y1):
-                    if board[i + y][j + x] == 2:
+                    if 0 <= i+y < 19 and 0 <= j+x < 19 and board[i+y][j+x] == 2:
                         count+=1
                 if count == 5:
                     print(2)
