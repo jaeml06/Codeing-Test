@@ -24,6 +24,6 @@ for i in range(101):
                 cnt_g+=1
             if arr[k] == 'H':
                 cnt_h +=1
-        if cnt_g == cnt_h:
+        if cnt_g == 0 or cnt_h==0 or cnt_g == cnt_h:
             max_len = max(max_len, j-i)
 print(max_len)
