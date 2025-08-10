@@ -15,4 +15,5 @@ for i in range(1, M + 1):
         if i - coin[j] >=0:
             dp[i] = min(dp[i], dp[i-coin[j]] + 1)
 
-print(dp[M])
+print(-1) if dp[M] == sys.maxsize else print(dp[M])
+
