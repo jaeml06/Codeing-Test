@@ -9,7 +9,7 @@ for i in range(k):
         for l in range(j + 1, n):
             t1 = arr[i][j]
             t2 = arr[i][l]
-            temp[f"{t1}{t2}"] = temp[f"{t1}{t2}"] + 1 if temp.get(f"{t1}{t2}") else 1
+            temp[(t1, t2)] = temp[(t1, t2)] + 1 if temp.get((t1, t2)) else 1
 
 cnt = 0
 for i in temp.values():
