@@ -3,8 +3,11 @@ n = int(input())
 a = list(map(int, input().split()))
 
 # Please write your code here.
-max_sum = -sys.maxsize
+max_sum = 0
 for i in range(n):
-    for j in range(i, n):
-        max_sum = max(max_sum, sum(a[i:j + 1]))
+    if max_sum >= 0:
+        max_sum += a[i]
+    else: max_sum = a[i]
+    
+    
 print(max_sum)
