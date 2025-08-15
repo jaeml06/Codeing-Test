@@ -17,6 +17,6 @@ for i in range(N):
     max_cnt.append((target, cnt))
 
 max_cnt.sort(key=lambda x: -x[1])
-print(max_cnt[0][0])
+print(0 if max_cnt[0][1] == 0 else max_cnt[0][0])
 
 
