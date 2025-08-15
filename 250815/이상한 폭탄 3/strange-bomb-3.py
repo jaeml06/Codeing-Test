@@ -2,7 +2,7 @@ N, K = map(int, input().split())
 num = [int(input()) for _ in range(N)]
 
 # Please write your code here.
-max_cnt = 0
+max_cnt = []
 for i in range(N):
     target = num[i]
     idx1 = i
@@ -14,6 +14,9 @@ for i in range(N):
             if K >= idx2 - idx1:
                 cnt+=1
             idx1 = idx2
-    max_cnt = max(max_cnt, cnt)
-print(max_cnt)
+    max_cnt.append((target, cnt))
+
+max_cnt.sort(key=lambda x: -x[1])
+print(max_cnt[0][0])
+
 
