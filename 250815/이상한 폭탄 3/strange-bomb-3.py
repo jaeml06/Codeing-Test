@@ -13,6 +13,7 @@ for i in range(N):
         if num[idx2] == target:
             if K >= idx2 - idx1:
                 cnt+=1
+            idx1 = idx2
     max_cnt = max(max_cnt, cnt)
 print(max_cnt)
 
