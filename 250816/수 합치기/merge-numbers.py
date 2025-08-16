@@ -1,15 +1,22 @@
-from collections import deque
-n = int(input())
+import sys, heapq
+
+input = sys.stdin.readline
+N = int(input().strip())
 arr = list(map(int, input().split()))
 
-arr.sort()
-dq = deque(arr)
-cnt = 0
-while len(dq) != 1:
-    if len(dq) >= 2:
-        temp1= dq.popleft()
-        temp2 = dq.popleft()
-        dq.append(temp1 + temp2)
-        cnt += temp1 + temp2
+if N == 1:
+    print(0)
+    sys.exit(0)
 
-print(cnt)
+hq = arr[:]
+heapq.heapify(hq)
+
+cost = 0
+while len(hq) > 1:
+    a = heapq.heappop(hq)
+    b = heapq.heappop(hq)
+    s = a + b
+    cost += s
+    heapq.heappush(hq, s)
+
+print(cost)
