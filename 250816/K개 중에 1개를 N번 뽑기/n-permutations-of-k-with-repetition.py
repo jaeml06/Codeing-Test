@@ -1,7 +1,15 @@
+# 입력: K N
 K, N = map(int, input().split())
 
-# Please write your code here.
-from itertools import product
-arr = list(range(1, K + 1))
-for i in product(arr, repeat=2):
-    print(f'{i[0]} {i[1]}')
+path = []
+
+def dfs(depth):
+    if depth == N:
+        print(*path)
+        return
+    for x in range(1, K + 1):
+        path.append(x)
+        dfs(depth + 1)
+        path.pop()
+
+dfs(0)
