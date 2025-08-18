@@ -1,10 +1,13 @@
 n = int(input())
 
-# Please write your code here.
-coins = [5, 2]
 count = 0
-for coin in coins:
-    if n >= coin:
-        count =count + (n // coin)
-        n %= coin
-print(count)
+while n >=0:
+    n -= 5
+    count += 1
+    if n % 2 == 0 and n % 5 != 0:
+        count += n // 2
+        print(count)
+        break
+
+else:
+    print(-1)
