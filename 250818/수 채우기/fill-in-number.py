@@ -1,13 +1,12 @@
 n = int(input())
 
-count = 0
-while n >=0:
-    n -= 5
-    count += 1
-    if n % 2 == 0 and n % 5 != 0:
-        count += n // 2
-        print(count)
-        break
+ans = 100000
 
-else:
-    print(-1)
+for i in range(0, (n // 5) + 1):
+    remain = n - 5 * i
+    if remain >=0 and remain % 2 == 0:
+        ans = min(ans, i + (remain // 2))
+
+if ans == 100000:
+    ans = -1
+print(ans)
