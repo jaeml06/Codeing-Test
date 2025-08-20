@@ -20,7 +20,7 @@ def dfs(x, y, k, visited):
             dfs(nx, ny, k, visited)
 
 max_cnt = 0
-ans_k = 0
+ans_k = 1
 for k in range(1, 101):
     visited = [[False] * m for _ in range(n)]
     cnt = 0
