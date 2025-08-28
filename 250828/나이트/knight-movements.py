@@ -9,7 +9,7 @@ dy = [1, 2, 2, 1, -1, -2, -2, -1]
 
 def bfs():
     visited[r1-1][c1-1] = 0
-    q = deque([(r1-1, c1-1)])
+    q = deque([(c1-1, r1-1)])
 
     while q:
         x, y = q.popleft()  
