@@ -1,18 +1,15 @@
 n, k = map(int, input().split())
 arr = [int(input()) for _ in range(n)]
 arr.sort()
-right = 1
-cur = 0
-cnt = 0
 
-for left in range(n):
-    cur = arr[left]
-    while right < n and left < right:
-        if cur + arr[right] <= k:
-            cnt += 1 
-        
-        right += 1
-    if right == n:
+cnt = 0
+left, right = 0, n - 1
+
+while left < right:
+    if arr[left] + arr[right] <= k:
+        cnt += (right - left)
+        left += 1
+    else:
         right -= 1
 
 print(cnt)
