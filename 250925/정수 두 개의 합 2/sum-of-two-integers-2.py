@@ -12,5 +12,7 @@ for left in range(n):
             cnt += 1 
         
         right += 1
+    if right == n:
+        right -= 1
 
 print(cnt)
