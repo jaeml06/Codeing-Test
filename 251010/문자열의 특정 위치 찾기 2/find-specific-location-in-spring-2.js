@@ -11,5 +11,7 @@ for (const word of words) {
   }
 }
 
-console.log(result.join("\n"));
+for(const val of result){
+    console.log(val)
+}
 console.log(result.length);
