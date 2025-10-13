@@ -16,11 +16,12 @@ for(let i = 0; i < input[0].length; i++){
             char = input[0][i]
             count = 1
         }
-        if(i === input[0].length-1){
+        
+    }
+    if(i === input[0].length-1){
                 temp.push(`${char}${count}`)
                 break;
             }
-    }
 }
 const string = temp.join('')
 console.log(string.length)
