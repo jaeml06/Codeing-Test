@@ -1,0 +1,5 @@
+stirng = input()
+temp = list(stirng)
+temp.pop(1)
+temp.pop(len(temp) - 2)
+print(''.join(temp))
