@@ -1,11 +1,11 @@
 function solution(s) {
-    const answer = [];
-    const words = s.split(' ');
-    words.forEach((word) => {
-        const arr = [...word].map((value, index) => {
-            return index % 2 === 0 ? value.toUpperCase() : value.toLowerCase();
+    const answer = []
+    const word = s.split(' ')
+    word.forEach((word) => {
+        const arr = [...word].map((val, idx) => {
+            return idx % 2 === 0 ? val.toUpperCase() : val.toLowerCase();
         })
-        answer.push(arr.join(''));
+        answer.push(arr.join(''))
     })
-    return answer.join(' ');
+    return answer.join(' ')
 }
