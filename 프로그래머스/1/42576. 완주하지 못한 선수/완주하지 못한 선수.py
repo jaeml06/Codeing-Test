@@ -1,9 +1,10 @@
 def solution(participant, completion):
-    hash_map = {}
+    h_m = {}
     for p in participant:
-        hash_map[p] = hash_map.get(p, 0) + 1
+        h_m[p] = h_m.get(p, 0) + 1
     for c in completion:
-        hash_map[c] -= 1
-    for k, v in hash_map.items():
-        if v > 0:
+        h_m[c] -= 1
+    for k, v in h_m.items():
+        if v != 0:
             return k
+
