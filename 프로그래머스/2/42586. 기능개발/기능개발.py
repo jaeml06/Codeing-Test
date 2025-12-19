@@ -1,6 +1,6 @@
 def solution(progresses, speeds):
-    answer = []
     days = []
+    answer = []
     for progress, speed in zip(progresses, speeds):
         day = 0
         total = progress
@@ -9,18 +9,14 @@ def solution(progresses, speeds):
             day += 1
         days.append(day)
         
-    answer = []
-    current = days[0]
-    count = 1
-
-    for d in days[1:]:
-        if d <= current:
-            count += 1
+    cur = days[0]
+    cnt = 1
+    for day in days[1:]:
+        if day <= cur:
+            cnt += 1
         else:
-            answer.append(count)
-            current = d
-            count = 1
-
-    # 마지막 묶음 추가
-    answer.append(count)
+            answer.append(cnt)
+            cnt = 1
+            cur = day
+    answer.append(cnt)
     return answer
