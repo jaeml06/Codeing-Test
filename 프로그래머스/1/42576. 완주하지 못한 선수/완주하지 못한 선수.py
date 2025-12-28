@@ -1,10 +1,10 @@
 def solution(participant, completion):
-    h_m = {}
+    p_m = {}
     for p in participant:
-        h_m[p] = h_m.get(p, 0) + 1
+        p_m[p] = p_m.get(p, 0) + 1
     for c in completion:
-        h_m[c] -= 1
-    for k, v in h_m.items():
-        if v != 0:
+        p_m[c] -= 1
+    for k, v in p_m.items():
+        if v > 0:
             return k
 
