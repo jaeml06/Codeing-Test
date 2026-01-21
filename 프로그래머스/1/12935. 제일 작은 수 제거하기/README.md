@@ -1,10 +1,10 @@
 # [level 1] 제일 작은 수 제거하기 - 12935 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12935?language=python3) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12935) 
 
 ### 성능 요약
 
-메모리: 15.1 MB, 시간: 1.59 ms
+메모리: 14.8 MB, 시간: 1.06 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2025년 10월 30일 13:23:13
+2026년 01월 21일 19:54:10
 
 ### 문제 설명
 
