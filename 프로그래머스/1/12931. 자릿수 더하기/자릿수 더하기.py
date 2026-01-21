@@ -1,8 +1,6 @@
 def solution(n):
-    string = list(map(int, str(n)))
-    
-    
-    answer = sum(string)
-    
-
+    answer = 0 
+    for i in str(n):
+        answer += int(i)
     return answer
+        
