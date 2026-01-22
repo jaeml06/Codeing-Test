@@ -1,6 +1,7 @@
 def solution(n, m):
     a, b = n, m
     while b:
+        print(b, a % b)
         a, b = b, a % b
     gcd = a
     lcm = n * m // gcd
