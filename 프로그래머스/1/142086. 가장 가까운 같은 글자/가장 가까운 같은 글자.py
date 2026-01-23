@@ -8,5 +8,4 @@ def solution(s):
         else:
             answer.append(-1)
         last_index[ch] = idx
-    
     return answer
