@@ -3,11 +3,10 @@ def solution(s):
     words = s.split(' ')
     for word in words:
         temp = ''
-        for idx, char in enumerate(word):
-            if idx%2 == 0:
-                temp += char.upper()
+        for idx, s in enumerate(word):
+            if idx % 2 == 0:
+                temp += s.upper()
             else:
-                temp += char.lower()
+                temp += s.lower()
         answer.append(temp)
-            
     return ' '.join(answer)
