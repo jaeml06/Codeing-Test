@@ -18,7 +18,7 @@ def solution(s):
     for ch in s:
         if ch.isalpha():
             temp += ch
-            if temp in num: 
+            if temp in num:
                 answer += num[temp]
                 temp = ''
         else:
