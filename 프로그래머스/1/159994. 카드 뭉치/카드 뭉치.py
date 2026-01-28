@@ -1,10 +1,10 @@
 
 def solution(cards1, cards2, goal):
-    for word in goal:
-        if cards1 and word == cards1[0]:
+    for w in goal:
+        if cards1 and cards1[0] == w:
             cards1.pop(0)
-        elif cards2 and word == cards2[0]:
+        elif cards2 and cards2[0] == w:
             cards2.pop(0)
-        else: 
+        else:
             return 'No'
     return 'Yes'
