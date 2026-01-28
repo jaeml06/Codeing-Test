@@ -1,14 +1,9 @@
 function solution(strings, n) {
-    var answer = strings.sort((a, b) => {
-        if(a[n].charCodeAt() - b[n].charCodeAt() === 0){
-           if(a < b){
-               return -1;
-           } else if(a === b){
-               return 0;
-           }
-            return 1;
+    const answer = [...strings].sort((a, b) =>{
+        if(a[n] === b[n]){
+            return a < b ? -1 : a > b ? 1 : 0
         }
-        return a[n].charCodeAt() - b[n].charCodeAt()
+        return a[n] < b[n] ? -1 : 1
     })
     return answer;
 }
