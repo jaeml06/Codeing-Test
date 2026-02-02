@@ -1,11 +1,11 @@
 def solution(n, arr1, arr2):
     answer = []
-    map1 = [str(bin(val)[2:]).zfill(n) for val in arr1]
-    map2 = [str(bin(val)[2:]).zfill(n) for val in arr2]
-    for m1, m2 in zip(map1, map2):
+    grid1 = [str(bin(v)[2:]).zfill(n) for v in arr1]
+    grid2 = [str(bin(v)[2:]).zfill(n) for v in arr2]
+    for g1, g2 in zip(grid1, grid2):
         temp = ''
-        for t1, t2 in zip(m1, m2):
-            if t1 == '0' and t2 == '0':
+        for v1, v2 in zip(g1, g2):
+            if v1 == '0' and v2 == '0':
                 temp += ' '
             else:
                 temp += '#'
