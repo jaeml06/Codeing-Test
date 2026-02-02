@@ -2,28 +2,22 @@ def solution(s):
     answer = 0
     if len(s) % 2 == 1:
         return 0
-
-    def can_right(string):
-        temp = []
+    def correct_right(string):
+        stack = []
         for ch in string:
             if ch in '({[':
-                temp.append(ch)
+                stack.append(ch)
             else:
-                if not temp:
+                if not stack:
                     return False
-                if temp[-1] == '(' and ch == ')':
-                    temp.pop()
-                elif temp[-1] == '{' and ch == '}':
-                    temp.pop()
-                elif temp[-1] == '[' and ch == ']':
-                    temp.pop()
+                if stack[-1] == '(' and ch == ')' or stack[-1] == '{' and ch == '}' or stack[-1] == '[' and ch == ']':
+                    stack.pop()
                 else:
                     return False
-        return not temp
-    
+        return not stack
+
     for i in range(len(s)):
         rotated = s[i:] + s[:i]
-        if can_right(rotated):
-            answer += 1
-        
+        if correct_right(rotated):
+            answer +=1
     return answer
