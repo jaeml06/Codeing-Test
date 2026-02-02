@@ -1,16 +1,12 @@
 def solution(elements):
     n = len(elements)
-    arr = elements * 2
-
-    prefix = [0] * (2 * n + 1)
-    for i in range(2 * n):
-        prefix[i + 1] = prefix[i] + arr[i]
-
-    sums = set()
-
-    for length in range(1, n + 1):
-        for start in range(n):
-            s = prefix[start + length] - prefix[start]
-            sums.add(s)
-
-    return len(sums)
+    set1 = set()
+    
+    for i in range(n):
+        temp = elements[i]
+        set1.add(temp)
+        for j in range(i + 1, i + n):
+            temp += elements[j % n]
+            set1.add(temp)
+    return len(set1)
+        
