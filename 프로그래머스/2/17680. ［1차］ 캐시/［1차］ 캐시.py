@@ -2,7 +2,7 @@ def solution(cacheSize, cities):
     if cacheSize == 0:
         return 5 * len(cities)
     
-    cache = []
+    cache =[]
     time = 0
     
     for city in cities:
@@ -17,5 +17,5 @@ def solution(cacheSize, cities):
                 cache.pop(0)
             cache.append(city)
             time += 5
-
+            
     return time
