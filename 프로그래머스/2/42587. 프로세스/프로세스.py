@@ -1,21 +1,18 @@
 from collections import deque
 def solution(priorities, location):
-    answer = 0
-    temp = []
-    for idx, p in enumerate(priorities):
-        temp.append((p, idx))
-    q = deque(temp)
+    q = deque([])
+    for i, p in enumerate(priorities):
+        q.append((p, i))
     priorities_sorted = sorted(priorities, reverse=True)
     
     process = 0
     while q:
-        p, idx = q.popleft()
+        p, i = q.popleft()
         
         if p == priorities_sorted[process]:
             process += 1
-            if idx == location:
+            if i == location:
                 return process
-        
         else:
-            q.append((p, idx))
-    return answer
+            q.append((p, i))
+    return 0
