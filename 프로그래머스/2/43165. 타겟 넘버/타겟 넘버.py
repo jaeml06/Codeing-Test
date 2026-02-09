@@ -8,9 +8,8 @@ def solution(numbers, target):
             if target == cur:
                 answer +=1
             return
+        
         dfs(idx + 1, cur + numbers[idx])
         dfs(idx + 1, cur - numbers[idx])
-    
-    dfs(0, 0)
-    
+    dfs(0,0)
     return answer
