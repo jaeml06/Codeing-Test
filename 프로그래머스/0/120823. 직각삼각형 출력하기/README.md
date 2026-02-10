@@ -1,10 +1,10 @@
 # [level 0] 직각삼각형 출력하기 - 120823 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120823) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120823?language=python3) 
 
 ### 성능 요약
 
-메모리: 32.2 MB, 시간: 48.85 ms
+메모리: 7.55 MB, 시간: 14.57 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 1월 3일 23:42:52
+2026년 02월 10일 13:35:47
 
 ### 문제 설명
 
@@ -35,10 +35,10 @@
 <h5>입출력 예</h5>
 
 <p>입력 #1</p>
-<div class="highlight" bis_skin_checked="1"><pre class="codehilite"><code>3
+<div class="highlight"><pre class="codehilite"><code>3
 </code></pre></div>
 <p>출력 #1</p>
-<div class="highlight" bis_skin_checked="1"><pre class="codehilite"><code>*
+<div class="highlight"><pre class="codehilite"><code>*
 **
 ***
 </code></pre></div>
