@@ -1,10 +1,10 @@
 # [level 0] 모스부호 (1) - 120838 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120838) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120838?language=python3) 
 
 ### 성능 요약
 
-메모리: 33.6 MB, 시간: 0.10 ms
+메모리: 9.08 MB, 시간: 0.01 ms
 
 ### 구분
 
@@ -16,13 +16,13 @@
 
 ### 제출 일자
 
-2024년 1월 2일 15:32:54
+2026년 02월 11일 13:28:39
 
 ### 문제 설명
 
 <p>머쓱이는 친구에게 모스부호를 이용한 편지를 받았습니다. 그냥은 읽을 수 없어 이를 해독하는 프로그램을 만들려고 합니다. 문자열 <code>letter</code>가 매개변수로 주어질 때, <code>letter</code>를 영어 소문자로 바꾼 문자열을 return 하도록 solution 함수를 완성해보세요.<br>
 모스부호는 다음과 같습니다.</p>
-<div class="highlight" bis_skin_checked="1"><pre class="codehilite"><code>morse = { 
+<div class="highlight"><pre class="codehilite"><code>morse = { 
     '.-':'a','-...':'b','-.-.':'c','-..':'d','.':'e','..-.':'f',
     '--.':'g','....':'h','..':'i','.---':'j','-.-':'k','.-..':'l',
     '--':'m','-.':'n','---':'o','.--.':'p','--.-':'q','.-.':'r',
