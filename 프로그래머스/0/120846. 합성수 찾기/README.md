@@ -1,10 +1,10 @@
 # [level 0] 합성수 찾기 - 120846 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120846) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120846?language=python3) 
 
 ### 성능 요약
 
-메모리: 33.5 MB, 시간: 0.11 ms
+메모리: 9.11 MB, 시간: 0.07 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 1월 5일 20:4:18
+2026년 02월 13일 14:24:50
 
 ### 문제 설명
 
