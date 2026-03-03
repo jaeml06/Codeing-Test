@@ -1,20 +1,12 @@
-import sys
-read = sys.stdin.readline
+N = int(input())
 
-N = int(read())
-
-pattern = '666'
-num = 0
-count = 0
+cnt = 0
+i = 666
 
 while True:
-  if pattern in str(num):
-    count+=1
-  if count == N:
-    break
-  num+=1
-print(num)
-
-
-
-  
+    if '666' in str(i):
+        cnt += 1
+        if cnt == N:
+            print(i)
+            break
+    i += 1
