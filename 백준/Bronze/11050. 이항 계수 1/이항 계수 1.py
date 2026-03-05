@@ -1,10 +1,10 @@
-import sys;
-input = sys.stdin.readline
-N, K = map(int, input().split())
-up = 1
-down = 1
-for i in range(N,N-K,-1):
-    up*=i
-for i in range(1,K+1):
-    down*=i
-print(int(up/down))
+n, k = map(int, input().split())
+
+temp1 = 1
+temp2 = 1
+for i in range(n, n-k,-1):
+    temp1 *= i
+for i in range(1, k + 1):
+    temp2 *= i
+print(temp1 // temp2)
+    
