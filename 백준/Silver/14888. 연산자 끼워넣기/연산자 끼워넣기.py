@@ -1,32 +1,45 @@
 import sys
 n = int(input())
-nums = list(map(int, input().split()))
-plus, minus, mul, div = map(int, input().split())
+arr = list(map(int, input().split()))
+ops = list(map(int, input().split()))
 
-max_val = -sys.maxsize
-min_val = sys.maxsize
+answer_max = -sys.maxsize
+answer_min = sys.maxsize
 
-def dfs(idx, cur, plus, minus, mul, div):
-    global max_val, min_val
-    
-    if idx == n:
-        max_val = max(max_val, cur)
-        min_val = min(min_val, cur)
-        return 
-    if plus > 0:
-        dfs(idx + 1, cur + nums[idx], plus - 1, minus, mul, div)
-    if minus > 0:
-        dfs(idx + 1, cur - nums[idx], plus, minus - 1, mul, div)
 
-    if mul > 0:
-        dfs(idx + 1, cur * nums[idx], plus, minus, mul - 1, div)
-
-    if div > 0:
+def operate(cur, num, op):
+    if op == 0:
+        return cur + num
+    elif op == 1:
+        return cur - num
+    elif op == 2:
+        return cur * num
+    else:
         if cur < 0:
-            dfs(idx + 1, -(-cur // nums[idx]), plus, minus, mul, div - 1)
-        else:
-            dfs(idx + 1, cur // nums[idx], plus, minus, mul, div - 1)
-dfs(1, nums[0], plus, minus, mul, div)
+            return -(-cur // num)
+        return cur // num
 
-print(max_val)
-print(min_val)
+def dfs(idx, cur, target):
+    global answer_max, answer_min
+
+    next_val = operate(cur, arr[idx], target)
+
+    if idx == n - 1:
+        answer_max = max(answer_max, next_val)
+        answer_min = min(answer_min, next_val)
+        return
+
+    for op in range(4):
+        if ops[op] > 0:
+            ops[op] -= 1
+            dfs(idx + 1, next_val, op)
+            ops[op] += 1
+
+for op in range(4):
+    if ops[op] > 0:
+        ops[op] -= 1
+        dfs(1, arr[0], op)
+        ops[op] += 1
+
+print(answer_max)
+print(answer_min)
