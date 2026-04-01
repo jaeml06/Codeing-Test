@@ -1,7 +1,13 @@
-N = input()
+n = int(input())
 
-result = 0
-for i in range(1, len(N)):
-    result += 9*10**(i-1)*i
-result += (int(N)-10**(len(N) - 1) + 1) * len(N)
-print(result)
+cnt = 0
+length = 1
+start = 1
+
+while start * 10 <= n:
+    cnt += 9 * start * length
+    start *= 10
+    length += 1
+cnt += (n - start + 1) * length
+
+print(cnt)
