@@ -1,0 +1,6 @@
+n = int(input())
+
+if n % 2 == 0 and sum([x for x in map(int, str(n))]):
+    print('Yes')
+else:
+    print('No')
